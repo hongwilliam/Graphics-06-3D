@@ -50,7 +50,7 @@ void add_box( struct matrix * edges,
   ====================*/
 void add_sphere( struct matrix * edges,
                  double cx, double cy, double cz,
-                 double r, double step ) {
+                 double r, int step ) {
 
   struct matrix *sphere = generate_sphere(cx, cy, cz, r, step);
   int i = 0;
@@ -75,7 +75,7 @@ void add_sphere( struct matrix * edges,
 	   Returns a matrix of those points
   ====================*/
 struct matrix * generate_sphere(double cx, double cy, double cz,
-                                double r, double step ) {
+                                double r, int step ) {
 
   struct matrix *sphere = new_matrix(4, 4);
   double x, y, z, rotation, circle;
@@ -108,7 +108,7 @@ struct matrix * generate_sphere(double cx, double cy, double cz,
   ====================*/
 void add_torus( struct matrix * edges,
                 double cx, double cy, double cz,
-                double r1, double r2, double step ) {
+                double r1, double r2, int step ) {
 
   struct matrix *torus = generate_torus(cx, cy, cz, r1, r2, step);
   int i = 0;
@@ -133,7 +133,7 @@ void add_torus( struct matrix * edges,
 	   Returns a matrix of those points
   ====================*/
 struct matrix * generate_torus( double cx, double cy, double cz,
-                                double r1, double r2, double step ) {
+                                double r1, double r2, int step ) {
 
   struct matrix *torus = new_matrix(4, 4);
   double x, y, z, rotation, circle;
@@ -160,7 +160,7 @@ struct matrix * generate_torus( double cx, double cy, double cz,
   ====================*/
 void add_circle( struct matrix * edges,
                  double cx, double cy, double cz,
-                 double r, double step ) {
+                 double r, int step ) {
   double x0, y0, x1, y1, t;
   int i;
   x0 = r + cx;
@@ -199,7 +199,7 @@ void add_curve( struct matrix *edges,
                 double x1, double y1,
                 double x2, double y2,
                 double x3, double y3,
-                double step, int type ) {
+                int step, int type ) {
 
   double t, x, y;
   struct matrix *xcoefs;
